@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Погода</title>
+    <link rel="stylesheet" href="{% static 'weather/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Проверьте погоду</h1>
+        <form id="weatherForm">
+            {% csrf_token %}
+            <input type="text" id="cityInput" placeholder="Например: Москва">
+            <button type="submit">Узнать</button>
+        </form>
+        <div id="weatherResult"></div>
+    </div>
+    <script src="{% static 'weather/script.js' %}"></script> 
+</body>
+</html>
